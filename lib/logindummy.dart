@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
 
 class LoginPage extends StatefulWidget {
