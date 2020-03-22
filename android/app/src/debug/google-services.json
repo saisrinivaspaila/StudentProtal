@@ -1,0 +1,32 @@
+{
+  "project_info": {
+    "project_number": "642508784492",
+    "firebase_url": "https://minipro2-9bc1f.firebaseio.com",
+    "project_id": "minipro2-9bc1f",
+    "storage_bucket": "minipro2-9bc1f.appspot.com"
+  },
+  "client": [{
+    "client_info": {
+      "mobilesdk_app_id": "1:642508784492:android:7a1573e719d4b4f1e52949",
+      "android_client_info": {
+        "package_name": "com.example.minipro"
+      }
+    },
+    "oauth_client": [{
+      "client_id": "642508784492-a8hp425j77lj44ihsp5q37gqt96qc24j.apps.googleusercontent.com",
+      "client_type": 3
+    }],
+    "api_key": [{
+      "current_key": "AIzaSyAkWuLELLPMdyUzLRHTEXqzSjab3xfQkUU"
+    }],
+    "services": {
+      "appinvite_service": {
+        "other_platform_oauth_client": [{
+          "client_id": "642508784492-a8hp425j77lj44ihsp5q37gqt96qc24j.apps.googleusercontent.com",
+          "client_type": 3
+        }]
+      }
+    }
+  }],
+  "configuration_version": "1"
+}
