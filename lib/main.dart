@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:minipro/menuPage.dart';
 import 'loginPage.dart';
 import 'mainpage.dart';
 import 'studentDetails.dart';
 import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
+import './menuPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -24,6 +26,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         routes: {
           '/studentDetails': (BuildContext context) => StudentDetails(_model),
+          '/menuPage': (BuildContext context) => MenuPage(_model)
         },
         home: AppHome(
           model: _model,
@@ -44,7 +47,7 @@ class AppHome extends StatelessWidget {
       appBar: AppBar(
         title: Text("Login"),
       ),
-       body:MyHomePage(title:"CIS",model: model,)// LoginPage(model),
+      body: LoginPage(),
     );
   }
 }

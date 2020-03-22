@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:scoped_model/scoped_model.dart';
 
 class Student extends Model {
-  String _regId = "17L31A0501";
+  String _regId = "";
   Map<String, dynamic> responseData = {};
   String _name = '';
   String _mobileNumber = '';
@@ -33,21 +33,22 @@ class Student extends Model {
     return _regId;
   }
 
-  Future<bool> fetchRegNo() {
+  Future<bool> fetchRegNo(String regId) {
+    _regId = regId;
     _isLoading = true;
     notifyListeners();
     return http
-        .get('https://minipro2-9bc1f.firebaseio.com/regno.json')
+        .get('https://minipro2-9bc1f.firebaseio.com/regno/$_regId.json')
         .then<bool>((http.Response response) {
       responseData = json.decode(response.body);
-      _name = responseData[_regId]["Name"];
-      _mobileNumber = responseData[_regId]["Mobile Number"];
-      // print(_name);
-      // print(_mobileNumber);
+      _name = responseData["Name"];
+      _mobileNumber = responseData["Mobile Number"];
+      print(_name);
+      print(_mobileNumber);
 
-      _classesAttended = responseData[_regId]["Class attended"];
+      _classesAttended = responseData["Class attended"];
 
-      _classesConducted = responseData[_regId]["Classes conducted"];
+      _classesConducted = responseData["Classes conducted"];
       print(_classesConducted);
       print(_classesAttended);
 
