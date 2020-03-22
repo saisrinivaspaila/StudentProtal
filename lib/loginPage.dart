@@ -1,34 +1,44 @@
 import 'package:flutter/material.dart';
 import './entities/model.dart';
+import './menuPage.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({Key key, this.model}) : super(key: key);
-  final String title="";
   final Student model;
-
+  LoginPage(this.model);
   @override
-  _LoginPageState createState() => _LoginPageState(model:model);
+  _LoginPageState createState() => _LoginPageState(model);
 }
 
 class _LoginPageState extends State<LoginPage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-  
-  final Student model;
+  final model;
+  final username = TextEditingController();
+  final passw = TextEditingController();
+  _LoginPageState(this.model);
 
-  _LoginPageState({this.model});
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the
+    // widget tree.
+    username.dispose();
+    passw.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final emailField = TextField(
-      obscureText: true,
+      controller: username,
+      // obscureText: true,
       style: style,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Admission NO.",
+          hintText: "Admission Number",
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
     final password = TextField(
+      controller: passw,
       obscureText: true,
       style: style,
       decoration: InputDecoration(
@@ -46,7 +56,11 @@ class _LoginPageState extends State<LoginPage> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
-          Navigator.pushReplacementNamed(context, '/menuPage');
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      MenuPage(model, username.text, passw.text)));
         },
         child: Text("Login",
             textAlign: TextAlign.center,
@@ -56,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     return Scaffold(
-      body: SingleChildScrollView(
+        body: SingleChildScrollView(
       child: Center(
         child: Container(
           color: Colors.white,
@@ -69,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget>[
                   SizedBox(
                     height: 35.0,
-                  ),//add media query for this one
+                  ), //add media query for this one
                   SizedBox(
                     height: 35.0,
                   ),
@@ -84,7 +98,8 @@ class _LoginPageState extends State<LoginPage> {
                   emailField,
                   SizedBox(
                     height: 35.0,
-                  ),password,
+                  ),
+                  password,
                   SizedBox(height: 45.0),
                   loginButon,
                   SizedBox(
@@ -96,7 +111,6 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-        )
-    );
+    ));
   }
 }

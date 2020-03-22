@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 class StudentDetails extends StatefulWidget {
   final Student model;
   StudentDetails(this.model);
-
   @override
   _StudentDetailsState createState() => _StudentDetailsState();
 }

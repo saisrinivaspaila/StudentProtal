@@ -5,11 +5,12 @@ import 'package:scoped_model/scoped_model.dart';
 
 class Student extends Model {
   String _regId = "";
+  String _pass = "";
   Map<String, dynamic> responseData = {};
   String _name = '';
   String _mobileNumber = '';
   int _classesAttended, _classesConducted;
-
+  bool _loginStatus;
   bool _isLoading = false;
 
   bool get isLoading {
@@ -33,7 +34,11 @@ class Student extends Model {
     return _regId;
   }
 
-  Future<bool> fetchRegNo(String regId) {
+  bool get loginStatus {
+    return _loginStatus;
+  }
+
+  Future<bool> fetchRegNo(String regId, String pass) {
     _regId = regId;
     _isLoading = true;
     notifyListeners();
@@ -41,20 +46,26 @@ class Student extends Model {
         .get('https://minipro2-9bc1f.firebaseio.com/regno/$_regId.json')
         .then<bool>((http.Response response) {
       responseData = json.decode(response.body);
-      _name = responseData["Name"];
-      _mobileNumber = responseData["Mobile Number"];
-      print(_name);
-      print(_mobileNumber);
-
-      _classesAttended = responseData["Class attended"];
-
-      _classesConducted = responseData["Classes conducted"];
-      print(_classesConducted);
-      print(_classesAttended);
-
-      _isLoading = false;
-      notifyListeners();
-      return true;
+      if (pass == responseData["Password"]) {
+        _loginStatus = true;
+        _pass = pass;
+        _name = responseData["Name"];
+        _mobileNumber = responseData["Mobile Number"];
+        print(_name);
+        print(_mobileNumber);
+        _classesAttended = responseData["Class attended"];
+        _classesConducted = responseData["Classes conducted"];
+        print(_classesConducted);
+        print(_classesAttended);
+        _isLoading = false;
+        notifyListeners();
+        return true;
+      } else {
+        _loginStatus = false;
+        _isLoading = false;
+        notifyListeners();
+        return true;
+      }
     }).catchError((error) {
       print('There is an error');
       _isLoading = false;
