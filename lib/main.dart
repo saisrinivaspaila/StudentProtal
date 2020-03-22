@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minipro/menuPage.dart';
 import 'loginPage.dart';
-import 'mainpage.dart';
+import 'logindummy.dart';
 import 'studentDetails.dart';
 import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
@@ -47,7 +47,8 @@ class AppHome extends StatelessWidget {
       appBar: AppBar(
         title: Text("Login"),
       ),
-      body: LoginPage(),
+      body:Logindummy(),
+      //  bro this is your login page----> LoginPage(),
     );
   }
 }
