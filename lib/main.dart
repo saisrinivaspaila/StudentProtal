@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:minipro/menuPage.dart';
-import 'loginPage.dart';
 import 'logindummy.dart';
 import 'studentDetails.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -44,10 +43,7 @@ class AppHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-       
-      ),
-      body:Logindummy(),
+      body:LoginPage(),
       //  bro this is your login page----> LoginPage(),
     );
   }

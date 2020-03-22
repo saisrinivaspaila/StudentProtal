@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
+// import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
-import 'loginPage.dart';
 
-class Logindummy extends StatefulWidget {
-  Logindummy({Key key, this.model}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  LoginPage({Key key, this.model}) : super(key: key);
   final String title="";
   final Student model;
 
   @override
-  _LogindummyState createState() => _LogindummyState(model:model);
+  _LoginPageState createState() => _LoginPageState(model:model);
 }
 
-class _LogindummyState extends State<Logindummy> {
+class _LoginPageState extends State<LoginPage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   
   final Student model;
 
-  _LogindummyState({this.model});
+  _LoginPageState({this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +47,7 @@ class _LogindummyState extends State<Logindummy> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
-          LoginPage();
+          Navigator.pushReplacementNamed(context, '/menuPage');
         },
         child: Text("Login",
             textAlign: TextAlign.center,
