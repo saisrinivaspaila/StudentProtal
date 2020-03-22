@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minipro/menuPage.dart';
-import 'logindummy.dart';
+import 'loginPage.dart';
 import 'studentDetails.dart';
 import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
