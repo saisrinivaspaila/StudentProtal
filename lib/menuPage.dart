@@ -108,7 +108,9 @@ class _MenuPageState extends State<MenuPage> {
                               padding: EdgeInsets.all(10.0),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30.0)),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/viewAttendance');
+                              },
                               child: Text("${menu[1]}",
                                   textAlign: TextAlign.center,
                                   style: style.copyWith(
@@ -136,7 +138,10 @@ class _MenuPageState extends State<MenuPage> {
                               color: Color(0xff3949ab),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30.0)),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, '/predictAttendance');
+                              },
                               child: Text("${menu[3]}",
                                   textAlign: TextAlign.center,
                                   style: style.copyWith(

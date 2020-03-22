@@ -21,6 +21,12 @@ class Student extends Model {
     return _name;
   }
 
+  int get classesAttended {
+    return _classesAttended;
+  }
+  int get classesConducted {
+    return _classesConducted;
+  }
   double get attendace {
     return double.parse(
         ((_classesAttended / _classesConducted) * 100).toStringAsFixed(2));
