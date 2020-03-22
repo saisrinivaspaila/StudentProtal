@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'loginPage.dart';
+import 'mainpage.dart';
 import 'studentDetails.dart';
 import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
@@ -43,7 +44,7 @@ class AppHome extends StatelessWidget {
       appBar: AppBar(
         title: Text("Login"),
       ),
-      body: LoginPage(model),
+       body:MyHomePage(title:"CIS",model: model,)// LoginPage(model),
     );
   }
 }
