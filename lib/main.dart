@@ -45,7 +45,7 @@ class AppHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login"),
+       
       ),
       body:Logindummy(),
       //  bro this is your login page----> LoginPage(),

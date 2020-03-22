@@ -4,8 +4,8 @@ import './entities/model.dart';
 import 'loginPage.dart';
 
 class Logindummy extends StatefulWidget {
-  Logindummy({Key key, this.title, this.model}) : super(key: key);
-  final String title;
+  Logindummy({Key key, this.model}) : super(key: key);
+  final String title="";
   final Student model;
 
   @override
@@ -27,6 +27,15 @@ class _LogindummyState extends State<Logindummy> {
       decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Admission NO.",
+          border:
+              OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+    );
+    final password = TextField(
+      obscureText: true,
+      style: style,
+      decoration: InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          hintText: "Password",
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
     );
@@ -55,27 +64,36 @@ class _LogindummyState extends State<Logindummy> {
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(36.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  height: 100.0,
-                  child: Image.asset(
-                    "images/Vignan_logo.png",
-                    fit: BoxFit.contain,
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(
+                    height: 35.0,
+                  ),//add media query for this one
+                  SizedBox(
+                    height: 35.0,
                   ),
-                ),
-                SizedBox(height: 45.0),
-                emailField,
-                SizedBox(
-                  height: 35.0,
-                ),
-                loginButon,
-                SizedBox(
-                  height: 15.0,
-                ),
-              ],
+                  SizedBox(
+                    height: 100.0,
+                    child: Image.asset(
+                      "images/Vignan_logo.png",
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  SizedBox(height: 45.0),
+                  emailField,
+                  SizedBox(
+                    height: 35.0,
+                  ),password,
+                  SizedBox(height: 45.0),
+                  loginButon,
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
