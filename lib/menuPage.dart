@@ -38,7 +38,7 @@ class _MenuPageState extends State<MenuPage> {
       backgroundColor: Color(0xfff5f7ff),
       body: Center(
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: _height/4),
+          padding: EdgeInsets.symmetric(vertical: _height / 4),
           child: Column(
             children: <Widget>[
               ScopedModelDescendant(
@@ -61,7 +61,9 @@ class _MenuPageState extends State<MenuPage> {
                             ),
                             RaisedButton(
                               color: Color(0xff3949ab),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/viewAttendance');
+                              },
                               child: Text("${menu[1]}",
                                   textAlign: TextAlign.center,
                                   style: style.copyWith(
@@ -79,7 +81,10 @@ class _MenuPageState extends State<MenuPage> {
                             ),
                             RaisedButton(
                               color: Color(0xff3949ab),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, '/predictAttendance');
+                              },
                               child: Text("${menu[3]}",
                                   textAlign: TextAlign.center,
                                   style: style.copyWith(
