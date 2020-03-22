@@ -17,7 +17,8 @@ class _MenuPageState extends State<MenuPage> {
     "Your Details",
     "Check Attendance",
     "Check Marks",
-    "Predict Attendace"
+    "Predict Attendace",
+    "Change Password"
   ];
   final _regId, _pass;
   _MenuPageState(this._regId, this._pass);
@@ -37,7 +38,7 @@ class _MenuPageState extends State<MenuPage> {
       backgroundColor: Color(0xfff5f7ff),
       body: Center(
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: _height / 4),
+          padding: EdgeInsets.symmetric(vertical: _height/4),
           child: Column(
             children: <Widget>[
               ScopedModelDescendant(
@@ -80,6 +81,15 @@ class _MenuPageState extends State<MenuPage> {
                               color: Color(0xff3949ab),
                               onPressed: () {},
                               child: Text("${menu[3]}",
+                                  textAlign: TextAlign.center,
+                                  style: style.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                            RaisedButton(
+                              color: Color(0xff3949ab),
+                              onPressed: () {},
+                              child: Text("${menu[4]}",
                                   textAlign: TextAlign.center,
                                   style: style.copyWith(
                                       color: Colors.white,
