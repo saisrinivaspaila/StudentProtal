@@ -9,19 +9,37 @@ class StudentDetails extends StatefulWidget {
 }
 
 class _StudentDetailsState extends State<StudentDetails> {
-  @override
+  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("View Data"),
+        backgroundColor: Color(0xff3949ab),
       ),
-      body: Column(
-        children: <Widget>[
-          Text("Name = " + widget.model.name),
-          Text("regId = " + widget.model.regId),
-          Text("Mobile Number = " + widget.model.mobileNumber),
-          Text("Attendance = ${widget.model.attendace}")
-        ],
+      backgroundColor: Color(0xfff5f7ff),
+      body: Center(
+        child: Card(
+          color: Color(0xfff5f7ff),
+          child: Column(
+            children: <Widget>[
+              Text("Name = " + widget.model.name,
+                  textAlign: TextAlign.center,
+                  style: style.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              Text("regId = " + widget.model.regId,
+                  textAlign: TextAlign.center,
+                  style: style.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              Text("Mobile Number = " + widget.model.mobileNumber,
+                  textAlign: TextAlign.center,
+                  style: style.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              Text("Attendance = ${widget.model.attendace}",
+                  textAlign: TextAlign.center,
+                  style: style.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold))
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -42,6 +42,7 @@ class AppHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff5f7ff),
       body: LoginPage(model),
       //  bro this is your login page----> LoginPage(),
     );

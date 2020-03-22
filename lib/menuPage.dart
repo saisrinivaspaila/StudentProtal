@@ -30,43 +30,67 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
     final _height = MediaQuery.of(context).size.height;
 
-    return Center(
-      child: Container(
-        padding: EdgeInsets.symmetric(vertical: _height / 4),
-        child: Column(
-          children: <Widget>[
-            ScopedModelDescendant(
-              builder: (BuildContext context, Widget widget, Student model) {
-                return model.isLoading
-                    ? CircularProgressIndicator()
-                    : Expanded(
-                        child: ListView(
-                        children: <Widget>[
-                          RaisedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, '/studentDetails');
-                            },
-                            child: Text("${menu[0]}"),
-                          ),
-                          RaisedButton(
-                            onPressed: () {},
-                            child: Text("${menu[1]}"),
-                          ),
-                          RaisedButton(
-                            onPressed: () {},
-                            child: Text("${menu[2]}"),
-                          ),
-                          RaisedButton(
-                            onPressed: () {},
-                            child: Text("${menu[3]}"),
-                          ),
-                        ],
-                      ));
-              },
-            )
-          ],
+    return Scaffold(
+      backgroundColor: Color(0xfff5f7ff),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: _height / 4),
+          child: Column(
+            children: <Widget>[
+              ScopedModelDescendant(
+                builder: (BuildContext context, Widget widget, Student model) {
+                  return model.isLoading
+                      ? CircularProgressIndicator()
+                      : Expanded(
+                          child: ListView(
+                          children: <Widget>[
+                            RaisedButton(
+                              color: Color(0xff3949ab),
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/studentDetails');
+                              },
+                              child: Text("${menu[0]}",
+                                  textAlign: TextAlign.center,
+                                  style: style.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                            RaisedButton(
+                              color: Color(0xff3949ab),
+                              onPressed: () {},
+                              child: Text("${menu[1]}",
+                                  textAlign: TextAlign.center,
+                                  style: style.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                            RaisedButton(
+                              color: Color(0xff3949ab),
+                              onPressed: () {},
+                              child: Text("${menu[2]}",
+                                  textAlign: TextAlign.center,
+                                  style: style.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                            RaisedButton(
+                              color: Color(0xff3949ab),
+                              onPressed: () {},
+                              child: Text("${menu[3]}",
+                                  textAlign: TextAlign.center,
+                                  style: style.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                          ],
+                        ));
+                },
+              )
+            ],
+          ),
         ),
       ),
     );
