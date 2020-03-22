@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
-import 'loginPage.dart';
 
 class Logindummy extends StatefulWidget {
   Logindummy({Key key, this.title, this.model}) : super(key: key);
@@ -39,7 +37,7 @@ class _LogindummyState extends State<Logindummy> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
-          LoginPage();
+          Navigator.pushReplacementNamed(context, '/menuPage');
         },
         child: Text("Login",
             textAlign: TextAlign.center,
