@@ -31,36 +31,83 @@ class _MenuPageState extends State<MenuPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double circleRadius = 150.0;
+    final double circleBorderWidth = 8.0;
     TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-    final _height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: Color(0xfff5f7ff),
-      body: Center(
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: _height/4),
-          child: Column(
+      body: Column(
+        children: <Widget>[
+          SizedBox(
+            height: 100.0,
+          ),
+          Stack(
+            alignment: Alignment.topCenter,
             children: <Widget>[
-              ScopedModelDescendant(
-                builder: (BuildContext context, Widget widget, Student model) {
-                  return model.isLoading
-                      ? CircularProgressIndicator()
-                      : Expanded(
-                          child: ListView(
+              Container(
+                width: circleRadius,
+                height: circleRadius,
+                decoration:
+                    ShapeDecoration(shape: CircleBorder(), color: Colors.white),
+                child: Padding(
+                  padding: EdgeInsets.all(circleBorderWidth),
+                  child: DecoratedBox(
+                    decoration: ShapeDecoration(
+                        shape: CircleBorder(),
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                              'https://upload.wikimedia.org/wikipedia/commons/a/a0/Bill_Gates_2018.jpg',
+                            ))),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10.0,
+              )
+            ],
+          ),
+          SizedBox(
+            height: 30.0,
+          ),
+          Text('fill-ur-name',
+              style: style.copyWith(
+                  color: Color(0xff3949ab), fontWeight: FontWeight.w900)),
+          SizedBox(
+            height: 30.0,
+          ),
+          Container(
+            child: ScopedModelDescendant(
+              builder: (BuildContext context, Widget widget, Student model) {
+                return model.isLoading
+                    ? CircularProgressIndicator()
+                    : Expanded(
+                        child: ListView(
                           children: <Widget>[
                             RaisedButton(
                               color: Color(0xff3949ab),
-                              onPressed: () {
-                                Navigator.pushNamed(context, '/studentDetails');
-                              },
+                              hoverElevation: 3.0,
+                              elevation: 1.0,
+                              padding: EdgeInsets.all(10.0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0)),
                               child: Text("${menu[0]}",
                                   textAlign: TextAlign.center,
                                   style: style.copyWith(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold)),
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/studentDetails');
+                              },
                             ),
                             RaisedButton(
                               color: Color(0xff3949ab),
+                              hoverElevation: 3.0,
+                              elevation: 1.0,
+                              padding: EdgeInsets.all(10.0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0)),
                               onPressed: () {},
                               child: Text("${menu[1]}",
                                   textAlign: TextAlign.center,
@@ -69,7 +116,12 @@ class _MenuPageState extends State<MenuPage> {
                                       fontWeight: FontWeight.bold)),
                             ),
                             RaisedButton(
+                              hoverElevation: 3.0,
+                              elevation: 1.0,
+                              padding: EdgeInsets.all(10.0),
                               color: Color(0xff3949ab),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0)),
                               onPressed: () {},
                               child: Text("${menu[2]}",
                                   textAlign: TextAlign.center,
@@ -78,7 +130,12 @@ class _MenuPageState extends State<MenuPage> {
                                       fontWeight: FontWeight.bold)),
                             ),
                             RaisedButton(
+                              hoverElevation: 3.0,
+                              elevation: 1.0,
+                              padding: EdgeInsets.all(10.0),
                               color: Color(0xff3949ab),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0)),
                               onPressed: () {},
                               child: Text("${menu[3]}",
                                   textAlign: TextAlign.center,
@@ -87,7 +144,12 @@ class _MenuPageState extends State<MenuPage> {
                                       fontWeight: FontWeight.bold)),
                             ),
                             RaisedButton(
+                              hoverElevation: 3.0,
+                              elevation: 1.0,
+                              padding: EdgeInsets.all(10.0),
                               color: Color(0xff3949ab),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0)),
                               onPressed: () {},
                               child: Text("${menu[4]}",
                                   textAlign: TextAlign.center,
@@ -96,12 +158,29 @@ class _MenuPageState extends State<MenuPage> {
                                       fontWeight: FontWeight.bold)),
                             ),
                           ],
-                        ));
-                },
-              )
-            ],
+                        ),
+                      );
+              },
+            ),
           ),
-        ),
+          FloatingActionButton(
+            foregroundColor: Color(0xfff5f7ff),
+            backgroundColor: Color(0xff3949ab),
+            hoverElevation: 5.0,
+            elevation: 4.0,
+            splashColor: Colors.lightBlue[600],
+            onPressed: () {},
+            child: Text(
+              "Logout",
+              style: TextStyle(
+                color: Color(0xfff5f7ff),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 60.0,
+          )
+        ],
       ),
     );
   }
