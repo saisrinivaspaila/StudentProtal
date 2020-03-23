@@ -40,7 +40,7 @@ class _PassPageState extends State<PassPage> {
                   ),
                 ),
                 SizedBox(height: 45.0),
-                Text("Wlcome " + widget.model.name,
+                Text("Welcome " + widget.model.name,
                     textAlign: TextAlign.left,
                     style: style.copyWith(
                         color: Colors.black, fontWeight: FontWeight.bold)),

@@ -161,7 +161,8 @@ class _MenuPageState extends State<MenuPage> {
                   SizedBox(
                     height: 300.0,
                   ),
-                  Text("Please check your username and password",
+                  Text(
+                      "Incorrect Password\nPlease check your Registration id and Password",
                       textAlign: TextAlign.center,
                       style: style.copyWith(
                           color: Colors.red, fontWeight: FontWeight.bold)),
