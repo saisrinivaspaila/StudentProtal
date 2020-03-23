@@ -149,7 +149,31 @@ class _MenuPageState extends State<MenuPage> {
         ),
       ));
     } else {
-      return Container(child: Text("Please Check your RegId or Password "));
+      return Scaffold(
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Text("Please check your username and password"),
+              RaisedButton(
+                hoverElevation: 3.0,
+                elevation: 1.0,
+                padding: EdgeInsets.all(10.0),
+                color: Color(0xff3949ab),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+                onPressed: () {
+                  widget.model.onLogout();
+                  Navigator.pushReplacementNamed(context, '/login');
+                },
+                child: Text("Click here to login again",
+                    textAlign: TextAlign.center,
+                    style: style.copyWith(
+                        color: Colors.white, fontWeight: FontWeight.bold)),
+              ),
+            ],
+          ),
+        ),
+      );
     }
   }
 }
