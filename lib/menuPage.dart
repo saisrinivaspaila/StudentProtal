@@ -26,6 +26,7 @@ class _MenuPageState extends State<MenuPage> {
 
     if (widget.model.loginStatus == true) {
       return Scaffold(
+        backgroundColor: Color(0xfff5f7ff),
           body: Padding(
         padding: const EdgeInsets.only(left: 20.0, right: 20.0),
         child: ListView(

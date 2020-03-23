@@ -75,7 +75,7 @@ class Student extends Model {
       _name = responseData["Name"];
       _mobileNumber = responseData["Mobile Number"];
       _year = responseData["Year"];
-      _section = responseData["Section"];
+      _section = responseData["Sec"];
       _semData = responseData["Semesters"];
       _classesAttended = responseData["Class attended"];
       _classesConducted = responseData["Classes conducted"];

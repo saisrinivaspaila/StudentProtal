@@ -105,7 +105,31 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               loginButon,
                               SizedBox(
-                                height: 15.0,
+                                height: 200.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: <Widget>[
+                                  SizedBox(width: 7),
+                                  Text(
+                                    'Made With',
+                                    style: TextStyle(
+                                        fontSize: 20.0,
+                                        wordSpacing: 2.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                  SizedBox(width: 7),
+                                  Icon(Icons.favorite, color: Colors.redAccent),
+                                  SizedBox(width: 7),
+                                  Text(
+                                    'Flutter',
+                                    style: TextStyle(
+                                        fontSize: 20.0,
+                                        wordSpacing: 2.0,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
                               ),
                             ],
                           ),

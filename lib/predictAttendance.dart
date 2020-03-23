@@ -19,6 +19,7 @@ class _PredictAttendanceState extends State<PredictAttendance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff5f7ff),
       body: Center(
         child: Card(
           color: Color(0xfff5f7ff),
