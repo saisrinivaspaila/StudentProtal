@@ -46,10 +46,8 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
           widget.model.fetchRegNo(username.text);
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => PassPage(model)));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => PassPage(model)));
         },
         child: Text("Click here to continue",
             textAlign: TextAlign.center,

@@ -28,22 +28,36 @@ class _PredictAttendanceState extends State<PredictAttendance> {
           color: Color(0xfff5f7ff),
           child: Column(
             children: <Widget>[
+              SizedBox(
+                height: 200.0,
+              ),
               Text("No of leaves you are expected to keep",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold)),
+                      color: Colors.black, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 20.0,
+              ),
               TextField(
                 controller: _holidayCount,
                 // obscureText: true,
                 style: style,
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                    hintText: "Holiday Count",
+                    hintText: "Day Count",
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(32.0))),
               ),
+              SizedBox(
+                height: 20.0,
+              ),
               RaisedButton(
-                child: Text("Predict my attendance"),
+                color: Color(0xff3949ab),
+                elevation: 5.0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+                child: Text("Predict my attendance",style: style.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   setState(() {
                     if (_holidayCount.text != "") {

@@ -13,9 +13,10 @@ class _StudentDetailsState extends State<StudentDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff3949ab),
+        
+       backgroundColor:Colors.purple[50],
       ),
-      backgroundColor: Color(0xfff5f7ff),
+      backgroundColor:Color(0xfff5f7ff),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,9 +26,9 @@ class _StudentDetailsState extends State<StudentDetails> {
           ),
           ButtonTheme(
             minWidth: 500.0,
-            height: 100.0,
+            height: 50.0,
             child: RaisedButton(
-              color: Color(0xfff5f7ff),
+              color:Color(0xfff5f7ff),
               hoverColor: Color(0xffffffff),
               hoverElevation: 3.0, highlightColor: Color(0xff3949ab),
               elevation: 1.0,
@@ -46,9 +47,9 @@ class _StudentDetailsState extends State<StudentDetails> {
           ),
           ButtonTheme(
             minWidth: 500.0,
-            height: 100.0,
+            height: 50.0,
             child: RaisedButton(
-              color: Color(0xfff5f7ff),
+              color:Color(0xfff5f7ff),
               hoverColor: Color(0xffffffff),
               hoverElevation: 3.0, highlightColor: Color(0xff3949ab),
               elevation: 1.0,
@@ -67,9 +68,9 @@ class _StudentDetailsState extends State<StudentDetails> {
           ),
           ButtonTheme(
             minWidth: 500.0,
-            height: 100.0,
+            height: 50.0,
             child: RaisedButton(
-              color: Color(0xfff5f7ff),
+              color:Color(0xfff5f7ff),
 
               hoverElevation: 3.0,
               elevation: 1.0,
@@ -90,9 +91,9 @@ class _StudentDetailsState extends State<StudentDetails> {
           ),
           ButtonTheme(
             minWidth: 500,
-            height: 100.0,
+            height: 50.0,
             child: RaisedButton(
-              color: Color(0xfff5f7ff),
+              color:Color(0xfff5f7ff),
               hoverColor: Color(0xffffffff),
               hoverElevation: 3.0, highlightColor: Color(0xff3949ab),
               elevation: 1.0,

@@ -13,7 +13,7 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff3949ab),
+        // backgroundColor: Color(0xff3949ab),
       ),
       backgroundColor: Color(0xfff5f7ff),
       body: Center(
@@ -21,18 +21,28 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
           color: Color(0xfff5f7ff),
           child: Column(
             children: <Widget>[
-              Text("Classes Attended = ${widget.model.classesAttended}",
-                  textAlign: TextAlign.center,
-                  style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold)),
-              Text("Classes Conducted = {widget.model.classesConducted}",
-                  textAlign: TextAlign.center,
-                  style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold)),
-              Text("Attendance = ${widget.model.attendace}",
-                  textAlign: TextAlign.center,
-                  style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold))
+              SizedBox(
+                height: 300.0,
+              ),
+              ButtonTheme(
+                minWidth: 500.0,
+                height: 50.0,
+                child: RaisedButton(
+                  color:  Color(0xfff5f7ff),
+                  hoverElevation: 3.0,
+                  elevation: 1.0,
+                  hoverColor: Color(0xffffffff),
+                  highlightColor: Color(0xff3949ab),
+                  onPressed: () {},
+                  child: Text(
+                      "Attendance = ${widget.model.attendace}\nClasses Attended = ${widget.model.classesAttended}\nClasses Conducted = ${widget.model.classesConducted}",
+                      textAlign: TextAlign.left,
+                      style: style.copyWith(
+                          color:  Colors.black,
+                          fontWeight: FontWeight.bold)),
+                ),
+              ),
+             
             ],
           ),
         ),
