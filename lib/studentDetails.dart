@@ -34,35 +34,45 @@ class _StudentDetailsState extends State<StudentDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Text("Name:" + widget.model.name,
+              Text("Name: " + widget.model.name,
                   textAlign: TextAlign.left,
                   style: style.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold)),
+                      color: Colors.black, fontWeight: FontWeight.bold)),
               SizedBox(
                 height: 10.0,
               ),
-              Text("regId:" + widget.model.regId,
+              Text("Regestration Number: " + widget.model.regId,
                   textAlign: TextAlign.left,
                   style: style.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold)),
+                      color: Colors.black, fontWeight: FontWeight.bold)),
               SizedBox(
                 height: 10.0,
               ),
-              Text("Mobile Number:" + widget.model.mobileNumber,
+              Text("Year: ${widget.model.year}",
                   textAlign: TextAlign.left,
                   style: style.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold)),
+                      color: Colors.black, fontWeight: FontWeight.bold)),
               SizedBox(
                 height: 10.0,
               ),
-              Text("Attendance : ${widget.model.attendace}%",
+              Text("Section: ${widget.model.section}",
                   textAlign: TextAlign.left,
                   style: style.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold)),
+                      color: Colors.black, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 10.0,
+              ),
+              Text("Mobile Number: " + widget.model.mobileNumber,
+                  textAlign: TextAlign.left,
+                  style: style.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 10.0,
+              ),
+              Text("Attendance: ${widget.model.attendace}%",
+                  textAlign: TextAlign.left,
+                  style: style.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.bold)),
             ],
           ),
 

@@ -14,7 +14,7 @@ class _MenuPageState extends State<MenuPage> {
   final menu = [
     "Your Details",
     "Check Attendance",
-    "Check Marks",
+    "Check Aggregate",
     "Predict Attendace",
     "Change Password"
   ];
@@ -165,7 +165,7 @@ class _MenuPageState extends State<MenuPage> {
                       textAlign: TextAlign.center,
                       style: style.copyWith(
                           color: Colors.red, fontWeight: FontWeight.bold)),
-                           SizedBox(
+                  SizedBox(
                     height: 50.0,
                   ),
                   RaisedButton(

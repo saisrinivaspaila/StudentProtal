@@ -92,8 +92,12 @@ class _ChangePassState extends State<ChangePass> {
               setState(() {
                 if (oldpass.text == widget.model.pass) {
                   if (newpass.text == cnewpass.text) {
-                    widget.model.setPass(newpass.text);
-                    Navigator.pushReplacementNamed(context, '/menuPage');
+                    if ((newpass.text).length > 8) {
+                      widget.model.setPass(newpass.text);
+                      Navigator.pushReplacementNamed(context, '/menuPage');
+                    } else {
+                      check = 3;
+                    }
                   } else {
                     check = 2;
                   }
@@ -152,6 +156,16 @@ class _ChangePassState extends State<ChangePass> {
     } else if (check == 2) {
       return Text(
         "*New password and confirm password fields should be matched",
+        style: TextStyle(
+          fontFamily: 'Montserrat',
+          fontSize: 20.0,
+          color: Colors.red,
+          wordSpacing: 1.0,
+        ),
+      );
+    } else if (check == 3) {
+      return Text(
+        "*Make sure that password length is greater than 8",
         style: TextStyle(
           fontFamily: 'Montserrat',
           fontSize: 20.0,

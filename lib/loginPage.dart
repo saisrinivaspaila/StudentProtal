@@ -26,16 +26,25 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   @override
+  void initState() {
+    username.text = "";
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final emailField = TextField(
       controller: username,
       // obscureText: true,
       style: style,
       decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Admission Number",
-          border:
-              OutlineInputBorder(borderSide:  const BorderSide(color:  Color(0xff3949ab), width: 0.0),borderRadius: BorderRadius.circular(32.0),),),
+        contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        hintText: "Admission Number",
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(color: Color(0xff3949ab), width: 0.0),
+          borderRadius: BorderRadius.circular(32.0),
+        ),
+      ),
     );
     final loginButon = Material(
       elevation: 5.0,
@@ -44,10 +53,16 @@ class _LoginPageState extends State<LoginPage> {
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {
-          widget.model.fetchRegNo(username.text);
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => PassPage(model)));
+        onPressed: () async {
+          if (await (widget.model.fetchRegNo(username.text)) == true) {
+            // print(username.text);
+            // print(widget.model.loginStatus);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PassPage(model)));
+          } else {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PassPage(model)));
+          }
         },
         child: Text("Click here to continue",
             textAlign: TextAlign.center,

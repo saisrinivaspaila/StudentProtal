@@ -10,8 +10,9 @@ class Student extends Model {
   String _name = '';
   String _mobileNumber = '';
   int _classesAttended, _classesConducted;
-  bool _loginStatus;
+  bool _loginStatus = false;
   bool _isLoading = false;
+  int _year, _section, _semData;
 
   bool get isLoading {
     return _isLoading;
@@ -46,29 +47,39 @@ class Student extends Model {
     return _pass;
   }
 
+  int get year {
+    return _year;
+  }
+
+  int get section {
+    return _section;
+  }
+
   bool get loginStatus {
     return _loginStatus;
   }
 
   Future<bool> fetchRegNo(String regId) {
-    print("hii");
     _regId = regId;
     _isLoading = true;
     notifyListeners();
     return http
         .get('https://minipro2-9bc1f.firebaseio.com/regno/$_regId.json')
         .then<bool>((http.Response response) {
+      _loginStatus = true;
+
+      notifyListeners();
       responseData = json.decode(response.body);
       _pass = responseData["Password"];
 
       _name = responseData["Name"];
       _mobileNumber = responseData["Mobile Number"];
-      // print(_name);
-      // print(_mobileNumber);
+      _year = responseData["Year"];
+      _section = responseData["Section"];
+      _semData = responseData["Semesters"];
       _classesAttended = responseData["Class attended"];
       _classesConducted = responseData["Classes conducted"];
-      // print(_classesConducted);
-      // print(_classesAttended);
+      _loginStatus = true;
       _isLoading = false;
       notifyListeners();
       return true;
@@ -83,12 +94,11 @@ class Student extends Model {
 
   void onLogout() {
     _regId = "";
+    _loginStatus = false;
   }
 
   void loginCheck(pass) {
-    if (regId == "") {
-      _loginStatus = false;
-    } else if (pass == _pass) {
+    if (pass == _pass) {
       _loginStatus = true;
     } else {
       _loginStatus = false;

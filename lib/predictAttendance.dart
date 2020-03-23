@@ -54,9 +54,12 @@ class _PredictAttendanceState extends State<PredictAttendance> {
                   // obscureText: true,
                   style: style,
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                      hintText: "Day Count",
-                      border: OutlineInputBorder(borderSide:  const BorderSide(color:  Color(0xff3949ab), width: 1.0),
+                      contentPadding:
+                          EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                      hintText: "Leave Count",
+                      border: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                              color: Color(0xff3949ab), width: 1.0),
                           borderRadius: BorderRadius.circular(32.0))),
                 ),
               ),
