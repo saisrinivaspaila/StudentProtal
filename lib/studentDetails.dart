@@ -24,19 +24,19 @@ class _StudentDetailsState extends State<StudentDetails> {
               Text("Name = " + widget.model.name,
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold)),
+                      color: Colors.black, fontWeight: FontWeight.bold)),
               Text("regId = " + widget.model.regId,
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold)),
+                      color: Colors.black, fontWeight: FontWeight.bold)),
               Text("Mobile Number = " + widget.model.mobileNumber,
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold)),
+                      color: Colors.black, fontWeight: FontWeight.bold)),
               Text("Attendance = ${widget.model.attendace}",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold))
+                      color: Colors.black, fontWeight: FontWeight.bold))
             ],
           ),
         ),
