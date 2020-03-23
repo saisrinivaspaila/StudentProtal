@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minipro/changepasswd.dart';
 import 'package:minipro/menuPage.dart';
 import 'package:minipro/predictAttendance.dart';
 // import 'package:minipro/menuPage.dart';
@@ -34,6 +35,8 @@ class _MyAppState extends State<MyApp> {
               PredictAttendance(_model),
           '/menuPage': (BuildContext context) => MenuPage(_model),
           '/login': (BuildContext context) => LoginPage(_model),
+          '/changePass': (BuildContext context) => ChangePass(_model),
+          
         },
         home: AppHome(
           model: _model,

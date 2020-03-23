@@ -42,6 +42,10 @@ class Student extends Model {
     return _regId;
   }
 
+  String get pass {
+    return _pass;
+  }
+
   bool get loginStatus {
     return _loginStatus;
   }
@@ -69,7 +73,7 @@ class Student extends Model {
       return true;
     }).catchError((error) {
       print('There is an error');
-      _isLoading = true;
+      _isLoading = false;
       notifyListeners();
       return false;
     });
@@ -85,5 +89,27 @@ class Student extends Model {
     } else {
       _loginStatus = false;
     }
+  }
+
+  Future<bool> setPass(passw) {
+    _isLoading = true;
+    notifyListeners();
+    _pass = passw;
+
+    return http
+        .put(
+            'https://minipro2-9bc1f.firebaseio.com/regno/$_regId/Password.json',
+            body: json.encode(_pass))
+        .then((http.Response response) {
+      // print('i should be executed before am i waiting');
+      _isLoading = false;
+      notifyListeners();
+      return true;
+    }).catchError((error) {
+      print('There is an error');
+      _isLoading = false;
+      notifyListeners();
+      return false;
+    });
   }
 }

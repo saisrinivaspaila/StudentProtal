@@ -32,7 +32,8 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
               Text("Attendance = ${widget.model.attendace}",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold))
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              
             ],
           ),
         ),

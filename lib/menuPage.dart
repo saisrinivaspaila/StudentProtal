@@ -120,7 +120,9 @@ class _MenuPageState extends State<MenuPage> {
               color: Color(0xff3949ab),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0)),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/changePass');
+              },
               child: Text("${menu[4]}",
                   textAlign: TextAlign.center,
                   style: style.copyWith(
