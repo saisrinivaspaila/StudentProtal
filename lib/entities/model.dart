@@ -24,16 +24,15 @@ class Student extends Model {
   int get classesAttended {
     return _classesAttended;
   }
+
   int get classesConducted {
     return _classesConducted;
   }
+
   double get attendace {
     return double.parse(
         ((_classesAttended / _classesConducted) * 100).toStringAsFixed(2));
   }
-
-
-
 
   String get mobileNumber {
     return _mobileNumber;
@@ -47,7 +46,8 @@ class Student extends Model {
     return _loginStatus;
   }
 
-  Future<bool> fetchRegNo(String regId, String pass) {
+  Future<bool> fetchRegNo(String regId) {
+    print("hii");
     _regId = regId;
     _isLoading = true;
     notifyListeners();
@@ -55,37 +55,31 @@ class Student extends Model {
         .get('https://minipro2-9bc1f.firebaseio.com/regno/$_regId.json')
         .then<bool>((http.Response response) {
       responseData = json.decode(response.body);
-      if (pass == responseData["Password"]) {
-        _loginStatus = true;
-        _pass = pass;
-        _name = responseData["Name"];
-        _mobileNumber = responseData["Mobile Number"];
-        print(_name);
-        print(_mobileNumber);
-        _classesAttended = responseData["Class attended"];
-        _classesConducted = responseData["Classes conducted"];
-        print(_classesConducted);
-        print(_classesAttended);
-        _isLoading = false;
-        notifyListeners();
-        return true;
-      } else {
-        _loginStatus = false;
-        _isLoading = false;
-        notifyListeners();
-        return true;
-      }
+      _pass = responseData["Password"];
+      _name = responseData["Name"];
+      _mobileNumber = responseData["Mobile Number"];
+      print(_name);
+      print(_mobileNumber);
+      _classesAttended = responseData["Class attended"];
+      _classesConducted = responseData["Classes conducted"];
+      print(_classesConducted);
+      print(_classesAttended);
+      _isLoading = false;
+      notifyListeners();
+      return true;
     }).catchError((error) {
       print('There is an error');
-      _isLoading = false;
+      _isLoading = true;
       notifyListeners();
       return false;
     });
   }
 
-  
-
-
-
-
+  void loginCheck(pass) {
+    if (pass == _pass) {
+      _loginStatus = true;
+    } else {
+      _loginStatus = false;
+    }
+  }
 }

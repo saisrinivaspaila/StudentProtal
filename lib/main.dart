@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minipro/menuPage.dart';
 import 'package:minipro/predictAttendance.dart';
 // import 'package:minipro/menuPage.dart';
 import 'loginPage.dart';
@@ -31,7 +32,7 @@ class _MyAppState extends State<MyApp> {
               AttendanceDetails(_model),
           '/predictAttendance': (BuildContext context) =>
               PredictAttendance(_model),
-          '/login': (BuildContext context) => LoginPage(_model),
+          '/menuPage': (BuildContext context) => MenuPage(_model),
         },
         home: AppHome(
           model: _model,
