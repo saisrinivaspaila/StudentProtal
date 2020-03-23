@@ -165,6 +165,9 @@ class _MenuPageState extends State<MenuPage> {
                       textAlign: TextAlign.center,
                       style: style.copyWith(
                           color: Colors.red, fontWeight: FontWeight.bold)),
+                           SizedBox(
+                    height: 50.0,
+                  ),
                   RaisedButton(
                     hoverElevation: 3.0,
                     elevation: 1.0,

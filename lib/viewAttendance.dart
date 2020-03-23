@@ -12,40 +12,73 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // backgroundColor: Color(0xff3949ab),
-      ),
       backgroundColor: Color(0xfff5f7ff),
-      body: Center(
-        child: Card(
-          color: Color(0xfff5f7ff),
-          child: Column(
+      body: Column(
+         // mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          SizedBox(
+            height: 100.0,
+          ), //add media query for this on
+          SizedBox(
+            height: 100.0,
+            child: Image.asset(
+              "images/Vignan_logo.png",
+              fit: BoxFit.contain,
+            ),
+          ),
+          SizedBox(
+            height: 90.0,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+              Text("Attendance: ${widget.model.attendace}",
+                  textAlign: TextAlign.left,
+                  style: style.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.bold)),
               SizedBox(
-                height: 300.0,
+                height: 10.0,
               ),
-              ButtonTheme(
-                minWidth: 500.0,
-                height: 50.0,
-                child: RaisedButton(
-                  color:  Color(0xfff5f7ff),
-                  hoverElevation: 3.0,
-                  elevation: 1.0,
-                  hoverColor: Color(0xffffffff),
-                  highlightColor: Color(0xff3949ab),
-                  onPressed: () {},
-                  child: Text(
-                      "Attendance = ${widget.model.attendace}\nClasses Attended = ${widget.model.classesAttended}\nClasses Conducted = ${widget.model.classesConducted}",
-                      textAlign: TextAlign.left,
-                      style: style.copyWith(
-                          color:  Colors.black,
-                          fontWeight: FontWeight.bold)),
-                ),
+              Text("Classes Attended: ${widget.model.classesAttended}",
+                  textAlign: TextAlign.left,
+                  style: style.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 10.0,
               ),
-             
+              Text("Classes Conducted: ${widget.model.classesConducted}",
+                  textAlign: TextAlign.left,
+                  style: style.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 10.0,
+              ),
             ],
           ),
-        ),
+
+          SizedBox(
+            height: 100.0,
+          ),
+          ButtonTheme(
+            child: Center(
+              child: Ink(
+                decoration: const ShapeDecoration(
+                  color: Color(0xff3949ab),
+                  shape: CircleBorder(),
+                ),
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  color: Color(0xfff5f7ff),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

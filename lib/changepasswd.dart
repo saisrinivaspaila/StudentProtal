@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minipro/entities/model.dart';
+// import 'package:slide_button/slide_button.dart';
+import 'package:slider_button/slider_button.dart';
 
 class ChangePass extends StatefulWidget {
   final Student model;
@@ -12,14 +14,34 @@ class _ChangePassState extends State<ChangePass> {
   final oldpass = TextEditingController(),
       newpass = TextEditingController(),
       cnewpass = TextEditingController();
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+  TextStyle style = TextStyle(
+    fontFamily: 'Montserrat',
+    fontSize: 20.0,
+    color: Color(0xff3949ab),
+    wordSpacing: 1.0,
+  );
   int check = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff5f7ff),
       body: ListView(
+        padding: EdgeInsets.all(20.0),
         children: <Widget>[
+          SizedBox(
+            height: 100.0,
+          ), //add media query for this on
+          SizedBox(
+            height: 100.0,
+            child: Image.asset(
+              "images/Vignan_logo.png",
+              fit: BoxFit.contain,
+            ),
+          ),
+          SizedBox(
+            height: 45.0,
+          ),
           TextField(
             controller: oldpass,
             obscureText: true,
@@ -29,6 +51,9 @@ class _ChangePassState extends State<ChangePass> {
                 hintText: "Old Password",
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(32.0))),
+          ),
+          SizedBox(
+            height: 20.0,
           ),
           TextField(
             controller: newpass,
@@ -40,6 +65,9 @@ class _ChangePassState extends State<ChangePass> {
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(32.0))),
           ),
+          SizedBox(
+            height: 20.0,
+          ),
           TextField(
             controller: cnewpass,
             obscureText: true,
@@ -49,6 +77,9 @@ class _ChangePassState extends State<ChangePass> {
                 hintText: "Confirm New Password",
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(32.0))),
+          ),
+          SizedBox(
+            height: 20.0,
           ),
           RaisedButton(
             hoverElevation: 3.0,
@@ -76,7 +107,30 @@ class _ChangePassState extends State<ChangePass> {
                 style: style.copyWith(
                     color: Colors.white, fontWeight: FontWeight.bold)),
           ),
-          output1(check),
+          SizedBox(
+            height: 20.0,
+          ),
+          Center(child: output1(check)),
+          SizedBox(
+            height: 50.0,
+          ),
+          ButtonTheme(
+            child: Center(
+              child: Ink(
+                decoration: const ShapeDecoration(
+                  color: Color(0xff3949ab),
+                  shape: CircleBorder(),
+                ),
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  color: Color(0xfff5f7ff),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
@@ -87,13 +141,23 @@ class _ChangePassState extends State<ChangePass> {
       return Text("");
     } else if (check == 1) {
       return Text(
-        "Old password is wrong",
-        style: style,
+        "*Old password is wrong",
+        style: TextStyle(
+          fontFamily: 'Montserrat',
+          fontSize: 20.0,
+          color: Colors.red,
+          wordSpacing: 1.0,
+        ),
       );
     } else if (check == 2) {
       return Text(
-        "New password and confirm password fields should be matched",
-        style: style,
+        "*New password and confirm password fields should be matched",
+        style: TextStyle(
+          fontFamily: 'Montserrat',
+          fontSize: 20.0,
+          color: Colors.red,
+          wordSpacing: 1.0,
+        ),
       );
     } else {
       return Text("");

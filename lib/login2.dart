@@ -46,7 +46,7 @@ class _PassPageState extends State<PassPage> {
                 decoration: InputDecoration(
                     contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     hintText: "Password",
-                    border: OutlineInputBorder(
+                    border: OutlineInputBorder(borderSide:  const BorderSide(color:  Color(0xff3949ab), width: 0.0),
                         borderRadius: BorderRadius.circular(32.0))),
               ),
               SizedBox(

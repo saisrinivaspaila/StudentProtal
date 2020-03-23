@@ -19,34 +19,46 @@ class _PredictAttendanceState extends State<PredictAttendance> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff3949ab),
-      ),
-      backgroundColor: Colors.black,
       body: Center(
         child: Card(
           color: Color(0xfff5f7ff),
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: 200.0,
+                height: 100.0,
+              ), //add media query for this on
+              SizedBox(
+                height: 100.0,
+                child: Image.asset(
+                  "images/Vignan_logo.png",
+                  fit: BoxFit.contain,
+                ),
               ),
-              Text("No of leaves you are expected to keep",
-                  textAlign: TextAlign.center,
-                  style: style.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 90.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text("No of leaves you are expected to keep",
+                    textAlign: TextAlign.center,
+                    style: style.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.bold)),
+              ),
               SizedBox(
                 height: 20.0,
               ),
-              TextField(
-                controller: _holidayCount,
-                // obscureText: true,
-                style: style,
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                    hintText: "Day Count",
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32.0))),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextField(
+                  controller: _holidayCount,
+                  // obscureText: true,
+                  style: style,
+                  decoration: InputDecoration(
+                      contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                      hintText: "Day Count",
+                      border: OutlineInputBorder(borderSide:  const BorderSide(color:  Color(0xff3949ab), width: 1.0),
+                          borderRadius: BorderRadius.circular(32.0))),
+                ),
               ),
               SizedBox(
                 height: 20.0,
@@ -56,8 +68,9 @@ class _PredictAttendanceState extends State<PredictAttendance> {
                 elevation: 5.0,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
-                child: Text("Predict my attendance",style: style.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold)),
+                child: Text("Predict my attendance",
+                    style: style.copyWith(
+                        color: Colors.white, fontWeight: FontWeight.bold)),
                 onPressed: () {
                   setState(() {
                     if (_holidayCount.text != "") {
@@ -72,7 +85,30 @@ class _PredictAttendanceState extends State<PredictAttendance> {
                   });
                 },
               ),
+              SizedBox(
+                height: 20.0,
+              ),
               predictAtt(_predicted),
+              SizedBox(
+                height: 100.0,
+              ),
+              ButtonTheme(
+                child: Center(
+                  child: Ink(
+                    decoration: const ShapeDecoration(
+                      color: Color(0xff3949ab),
+                      shape: CircleBorder(),
+                    ),
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back),
+                      color: Color(0xfff5f7ff),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),

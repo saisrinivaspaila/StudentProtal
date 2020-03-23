@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           hintText: "Admission Number",
           border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+              OutlineInputBorder(borderSide:  const BorderSide(color:  Color(0xff3949ab), width: 0.0),borderRadius: BorderRadius.circular(32.0),),),
     );
     final loginButon = Material(
       elevation: 5.0,
