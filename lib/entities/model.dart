@@ -32,6 +32,9 @@ class Student extends Model {
         ((_classesAttended / _classesConducted) * 100).toStringAsFixed(2));
   }
 
+
+
+
   String get mobileNumber {
     return _mobileNumber;
   }
@@ -79,4 +82,10 @@ class Student extends Model {
       return false;
     });
   }
+
+  
+
+
+
+
 }
