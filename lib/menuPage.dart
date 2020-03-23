@@ -152,27 +152,38 @@ class _MenuPageState extends State<MenuPage> {
       ));
     } else {
       return Scaffold(
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              Text("Please check your username and password"),
-              RaisedButton(
-                hoverElevation: 3.0,
-                elevation: 1.0,
-                padding: EdgeInsets.all(10.0),
-                color: Color(0xff3949ab),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0)),
-                onPressed: () {
-                  widget.model.onLogout();
-                  Navigator.pushReplacementNamed(context, '/login');
-                },
-                child: Text("Click here to login again",
-                    textAlign: TextAlign.center,
-                    style: style.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold)),
+        body: Container(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 300.0,
+                  ),
+                  Text("Please check your username and password",
+                      textAlign: TextAlign.center,
+                      style: style.copyWith(
+                          color: Colors.red, fontWeight: FontWeight.bold)),
+                  RaisedButton(
+                    hoverElevation: 3.0,
+                    elevation: 1.0,
+                    padding: EdgeInsets.all(10.0),
+                    color: Color(0xff3949ab),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0)),
+                    onPressed: () {
+                      widget.model.onLogout();
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
+                    child: Text("Click here to login again",
+                        textAlign: TextAlign.center,
+                        style: style.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       );
