@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minipro/entities/model.dart';
 // import 'package:slide_button/slide_button.dart';
-import 'package:slider_button/slider_button.dart';
 
 class ChangePass extends StatefulWidget {
   final Student model;
