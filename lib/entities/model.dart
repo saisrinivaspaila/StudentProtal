@@ -69,7 +69,7 @@ class Student extends Model {
       return true;
     }).catchError((error) {
       print('There is an error');
-      _isLoading = true;
+      _isLoading = false;
       notifyListeners();
       return false;
     });
