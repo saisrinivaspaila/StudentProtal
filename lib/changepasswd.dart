@@ -14,6 +14,7 @@ class _ChangePassState extends State<ChangePass> {
       cnewpass = TextEditingController();
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   int check = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,35 +58,45 @@ class _ChangePassState extends State<ChangePass> {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0)),
             onPressed: () {
-              if (oldpass.text == widget.model.pass) {
-                if (newpass.text == cnewpass.text) {
-                  widget.model.setPass(newpass.text);
-                  Navigator.pushReplacementNamed(context, '/menuPage');
+              setState(() {
+                if (oldpass.text == widget.model.pass) {
+                  if (newpass.text == cnewpass.text) {
+                    widget.model.setPass(newpass.text);
+                    Navigator.pushReplacementNamed(context, '/menuPage');
+                  } else {
+                    check = 2;
+                  }
                 } else {
-                  check = 2;
+                  check = 1;
                 }
-              } else {
-                check = 1;
-              }
+              });
             },
             child: Text("Change Password",
                 textAlign: TextAlign.center,
                 style: style.copyWith(
                     color: Colors.white, fontWeight: FontWeight.bold)),
           ),
-          output(check),
+          output1(check),
         ],
       ),
     );
   }
 
-  Widget output(check) {
+  Widget output1(check) {
     if (check == 0) {
       return Text("");
     } else if (check == 1) {
-      return Text("Old password is wrong");
+      return Text(
+        "Old password is wrong",
+        style: style,
+      );
     } else if (check == 2) {
-      return Text("New password and confirm password fields should be matched");
+      return Text(
+        "New password and confirm password fields should be matched",
+        style: style,
+      );
+    } else {
+      return Text("");
     }
   }
 }
