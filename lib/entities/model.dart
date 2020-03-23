@@ -60,20 +60,22 @@ class Student extends Model {
         .then<bool>((http.Response response) {
       responseData = json.decode(response.body);
       _pass = responseData["Password"];
+
       _name = responseData["Name"];
       _mobileNumber = responseData["Mobile Number"];
-      print(_name);
-      print(_mobileNumber);
+      // print(_name);
+      // print(_mobileNumber);
       _classesAttended = responseData["Class attended"];
       _classesConducted = responseData["Classes conducted"];
-      print(_classesConducted);
-      print(_classesAttended);
+      // print(_classesConducted);
+      // print(_classesAttended);
       _isLoading = false;
       notifyListeners();
       return true;
     }).catchError((error) {
       print('There is an error');
       _isLoading = false;
+      _loginStatus = false;
       notifyListeners();
       return false;
     });
@@ -84,7 +86,9 @@ class Student extends Model {
   }
 
   void loginCheck(pass) {
-    if (pass == _pass) {
+    if (regId == "") {
+      _loginStatus = false;
+    } else if (pass == _pass) {
       _loginStatus = true;
     } else {
       _loginStatus = false;
