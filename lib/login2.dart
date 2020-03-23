@@ -47,6 +47,9 @@ class _PassPageState extends State<PassPage> {
             border:
                 OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
       ),
+      SizedBox(
+        height: 35.0,
+      ),
       Material(
         elevation: 5.0,
         borderRadius: BorderRadius.circular(30.0),

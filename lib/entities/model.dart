@@ -75,6 +75,10 @@ class Student extends Model {
     });
   }
 
+  void onLogout() {
+    _regId = "";
+  }
+
   void loginCheck(pass) {
     if (pass == _pass) {
       _loginStatus = true;

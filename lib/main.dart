@@ -33,6 +33,7 @@ class _MyAppState extends State<MyApp> {
           '/predictAttendance': (BuildContext context) =>
               PredictAttendance(_model),
           '/menuPage': (BuildContext context) => MenuPage(_model),
+          '/login': (BuildContext context) => LoginPage(_model),
         },
         home: AppHome(
           model: _model,

@@ -137,6 +137,7 @@ class _MenuPageState extends State<MenuPage> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30.0)),
               onPressed: () {
+                widget.model.onLogout();
                 Navigator.pushReplacementNamed(context, '/login');
               },
               child: Text("Log Out",
