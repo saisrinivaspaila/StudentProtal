@@ -13,9 +13,9 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff5f7ff),
-      body: Column(
-         // mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      body: ListView(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           SizedBox(
             height: 100.0,
@@ -30,32 +30,34 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
           SizedBox(
             height: 90.0,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Text("Attendance: ${widget.model.attendace}",
-                  textAlign: TextAlign.left,
-                  style: style.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold)),
-              SizedBox(
-                height: 10.0,
-              ),
-              Text("Classes Attended: ${widget.model.classesAttended}",
-                  textAlign: TextAlign.left,
-                  style: style.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold)),
-              SizedBox(
-                height: 10.0,
-              ),
-              Text("Classes Conducted: ${widget.model.classesConducted}",
-                  textAlign: TextAlign.left,
-                  style: style.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold)),
-              SizedBox(
-                height: 10.0,
-              ),
-            ],
+          Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Text("Attendance: ${widget.model.attendace} %",
+                    textAlign: TextAlign.left,
+                    style: style.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.bold)),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text("Classes Attended: ${widget.model.classesAttended}",
+                    textAlign: TextAlign.left,
+                    style: style.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.bold)),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text("Classes Conducted: ${widget.model.classesConducted}",
+                    textAlign: TextAlign.left,
+                    style: style.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.bold)),
+                SizedBox(
+                  height: 10.0,
+                ),
+              ],
+            ),
           ),
 
           SizedBox(

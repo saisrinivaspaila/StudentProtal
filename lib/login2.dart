@@ -83,11 +83,8 @@ class _PassPageState extends State<PassPage> {
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                       onPressed: () {
                         widget.model.loginCheck(passw.text);
-
                         Navigator.pushReplacementNamed(context, '/menuPage');
-
                         // Navigator.push(context,
-
                         // MaterialPageRoute(builder: (context) => MenuPage(model)));
                       },
                       child: Text("Login",

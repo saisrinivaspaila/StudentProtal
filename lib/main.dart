@@ -1,4 +1,5 @@
 import 'dart:async';
+// import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:minipro/changepasswd.dart';
@@ -11,7 +12,6 @@ import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
 // import './menuPage.dart';
 import "./viewAttendance.dart";
-import 'package:animated_splash/animated_splash.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -21,7 +21,6 @@ void main() {
 }
 
 class SplashScreen extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     return SplashScreenState();
@@ -29,7 +28,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -42,26 +40,39 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   onDoneLoading() async {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => MyApp()));
   }
 
   @override
   Widget build(BuildContext context) {
-        return Scaffold(
-          backgroundColor: Color(0xfff5f7ff),
-          body: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  SizedBox(width: 7),
-                  Text('Made With',style: TextStyle(fontSize: 20.0,wordSpacing: 2.0,fontWeight: FontWeight.w500),),
-              SizedBox(width: 7),
-              Icon(Icons.favorite, color:Colors.redAccent),
-              SizedBox(width: 7),
-              Text('Flutter',style: TextStyle(fontSize: 20.0,wordSpacing: 2.0,fontWeight: FontWeight.w500),),
-            ],
-          ),
+    return Scaffold(
+      backgroundColor: Color(0xfff5f7ff),
+      body: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(width: 7),
+            Text(
+              'Made With',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  wordSpacing: 2.0,
+                  fontWeight: FontWeight.w500),
+            ),
+            SizedBox(width: 7),
+            Icon(Icons.favorite, color: Colors.redAccent),
+            SizedBox(width: 7),
+            Text(
+              'Flutter',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  wordSpacing: 2.0,
+                  fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -91,7 +102,6 @@ class _MyAppState extends State<MyApp> {
           '/menuPage': (BuildContext context) => MenuPage(_model),
           '/login': (BuildContext context) => LoginPage(_model),
           '/changePass': (BuildContext context) => ChangePass(_model),
-          
         },
         home: AppHome(
           model: _model,
@@ -117,20 +127,16 @@ class AppHome extends StatelessWidget {
 }
 // return Container(
 
+//   // decoration: BoxDecoration(
+//   //   image: DecorationImage(
 
-
-
-
-    //   // decoration: BoxDecoration(
-    //   //   image: DecorationImage(
-
-    //   //       image: AssetImage('images/Vignan_logo.png'),
-    //   //       fit: BoxFit.contain
-    //   //   ) ,
-    //   // ),
-    //   // child: Center(
-    //   //   child: CircularProgressIndicator(
-    //   //     valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
-    //   //   ),
-    //   // ),
-    // );
+//   //       image: AssetImage('images/Vignan_logo.png'),
+//   //       fit: BoxFit.contain
+//   //   ) ,
+//   // ),
+//   // child: Center(
+//   //   child: CircularProgressIndicator(
+//   //     valueColor: AlwaysStoppedAnimation<Color>(Colors.redAccent),
+//   //   ),
+//   // ),
+// );

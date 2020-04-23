@@ -13,9 +13,11 @@ class Student extends Model {
   double _attendance;
   bool _loginStatus = false;
   bool _isLoading = false;
-  int _year, _section ;
-  dynamic _semData;
-
+  int _year, _section;
+  Map<String, dynamic> _semData;
+  Map _cgpa = {};
+  Map _backlogInEachSem = {};
+  Map _gradesInEachSem = {};
   bool get isLoading {
     return _isLoading;
   }
@@ -77,6 +79,17 @@ class Student extends Model {
       _year = responseData["Year"];
       _section = responseData["Sec"];
       _semData = responseData["Semesters"];
+      _semData.forEach((key, value) {
+        _cgpa[key] = value["Semester GPA"];
+        _backlogInEachSem[key] = value["Backlogs"];
+        Map temp = {};
+        value.forEach((key1, value1) {
+          if (key1 != "Backlogs" && key1 != "Semester GPA") {
+            temp[key1] = value1;
+          }
+        });
+        _gradesInEachSem[key] = temp;
+      });
       _classesAttended = responseData["Attendance"]["Classes attended"];
       _classesConducted = responseData["Attendance"]["Classes conducted"];
       _attendance = responseData["Attendance"]["Attendance Percentage"];
