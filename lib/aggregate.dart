@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 List semesters = [];
 List backlogInfo = [];
 List gradePerSem = [];
+List<dynamic> semestergpa = [];
+TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
 class AggregateDetails extends StatefulWidget {
   final Student model;
@@ -14,8 +16,6 @@ class AggregateDetails extends StatefulWidget {
 }
 
 class _AggregateDetailsState extends State<AggregateDetails> {
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-  List<dynamic> semestergpa = [];
   Widget build(BuildContext context) {
     setsemestergpa();
     print(widget.model.backlogInfo);
@@ -39,14 +39,21 @@ class _AggregateDetailsState extends State<AggregateDetails> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
                 child: Container(
-                  child: Text('${semesters[index]}: ${semestergpa[index]}',
-                  textAlign: TextAlign.left ,
-                  textDirection: TextDirection.ltr,
-                      style: style.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),),
+                  child: Text(
+                    '${semesters[index]}: ${semestergpa[index]}',
+                    textAlign: TextAlign.left,
+                    textDirection: TextDirection.ltr,
+                    style: style.copyWith(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
                 ),
                 onPressed: () {
-                  // Navigator.pushNamed(context, '/studentDetails');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SemesterData(index),
+                    ),
+                  );
                 },
               ),
             );
@@ -90,17 +97,33 @@ class _AggregateDetailsState extends State<AggregateDetails> {
   }
 }
 
-// class SemesterData extends StatefulWidget {
-//   final int index;
-//   SemesterData(this.index);
+class SemesterData extends StatefulWidget {
+  final int index;
+  SemesterData(this.index);
 
-//   @override
-//   _SemesterDataState createState() => _SemesterDataState();
-// }
+  @override
+  _SemesterDataState createState() => _SemesterDataState(index);
+}
 
-// class _SemesterDataState extends State<SemesterData> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Material();
-//   }
-// }
+class _SemesterDataState extends State<SemesterData> {
+  final int index;
+  _SemesterDataState(this.index);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: ListView.builder(
+          itemCount: semestergpa.length,
+          itemBuilder: (context, index) {
+            return ListBody(
+              children: [Text('Hi')],
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  void setsemestergpa() {}
+}
