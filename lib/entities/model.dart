@@ -13,7 +13,8 @@ class Student extends Model {
   double _attendance;
   bool _loginStatus = false;
   bool _isLoading = false;
-  int _year, _section, _semData;
+  int _year, _section ;
+  dynamic _semData;
 
   bool get isLoading {
     return _isLoading;
@@ -84,7 +85,7 @@ class Student extends Model {
       notifyListeners();
       return true;
     }).catchError((error) {
-      print('There is an error');
+      print(error);
       _isLoading = false;
       _loginStatus = false;
       notifyListeners();

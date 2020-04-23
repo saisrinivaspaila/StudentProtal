@@ -26,91 +26,110 @@ class _PassPageState extends State<PassPage> {
 
     if (widget.model.loginStatus == true) {
       return Scaffold(
+        resizeToAvoidBottomPadding: false,
         backgroundColor: Color(0xfff5f7ff),
-        body: Padding(
-          padding: const EdgeInsets.all(36.0),
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 100.0,
-              ), //add media query for this on
-              SizedBox(
-                height: 100.0,
-                child: Image.asset(
-                  "images/Vignan_logo.png",
-                  fit: BoxFit.contain,
-                ),
-              ),
-              SizedBox(height: 45.0),
-              Text("Welcome " + widget.model.name,
-                  textAlign: TextAlign.left,
-                  style: style.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold)),
-              SizedBox(height: 20.0),
-              TextField(
-                controller: passw,
-                obscureText: true,
-                style: style,
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                    hintText: "Password",
-                    border: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                            color: Color(0xff3949ab), width: 0.0),
-                        borderRadius: BorderRadius.circular(32.0))),
-              ),
-              SizedBox(
-                height: 35.0,
-              ),
-              Material(
-                elevation: 5.0,
-                borderRadius: BorderRadius.circular(30.0),
-                color: Color(0xff3949ab),
-                child: MaterialButton(
-                  minWidth: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                  onPressed: () {
-                    widget.model.loginCheck(passw.text);
-                    Navigator.pushReplacementNamed(context, '/menuPage');
-                    // Navigator.push(context,
-                    // MaterialPageRoute(builder: (context) => MenuPage(model)));
-                  },
-                  child: Text("Login",
-                      textAlign: TextAlign.center,
-                      style: style.copyWith(
-                          color: Color(0xfff5f7ff),
-                          fontWeight: FontWeight.bold)),
-                ),
-              ),
-              SizedBox(
-                height: 200.0,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
+        body: ListView(
+          shrinkWrap: true,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(36.0),
+              child: Column(
                 children: <Widget>[
-                  SizedBox(width: 7),
-                  Text(
-                    'Made With',
-                    style: TextStyle(
-                        fontSize: 20.0,
-                        wordSpacing: 2.0,
-                        fontWeight: FontWeight.w500),
+                  SizedBox(
+                    height: 100.0,
+                  ), //add media query for this on
+
+                  SizedBox(
+                    height: 100.0,
+                    child: Image.asset(
+                      "images/Vignan_logo.png",
+                      fit: BoxFit.contain,
+                    ),
                   ),
-                  SizedBox(width: 7),
-                  Icon(Icons.favorite, color: Colors.redAccent),
-                  SizedBox(width: 7),
-                  Text(
-                    'Flutter',
-                    style: TextStyle(
-                        fontSize: 20.0,
-                        wordSpacing: 2.0,
-                        fontWeight: FontWeight.w500),
+
+                  SizedBox(height: 45.0),
+
+                  Text("Welcome " + widget.model.name,
+                      textAlign: TextAlign.left,
+                      style: style.copyWith(
+                          color: Colors.black, fontWeight: FontWeight.bold)),
+
+                  SizedBox(height: 20.0),
+
+                  TextField(
+                    controller: passw,
+                    obscureText: true,
+                    style: style,
+                    decoration: InputDecoration(
+                        contentPadding:
+                            EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                        hintText: "Password",
+                        border: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                                color: Color(0xff3949ab), width: 0.0),
+                            borderRadius: BorderRadius.circular(32.0))),
+                  ),
+
+                  SizedBox(
+                    height: 35.0,
+                  ),
+
+                  Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: Color(0xff3949ab),
+                    child: MaterialButton(
+                      minWidth: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                      onPressed: () {
+                        widget.model.loginCheck(passw.text);
+
+                        Navigator.pushReplacementNamed(context, '/menuPage');
+
+                        // Navigator.push(context,
+
+                        // MaterialPageRoute(builder: (context) => MenuPage(model)));
+                      },
+                      child: Text("Login",
+                          textAlign: TextAlign.center,
+                          style: style.copyWith(
+                              color: Color(0xfff5f7ff),
+                              fontWeight: FontWeight.bold)),
+                    ),
+                  ),
+
+                  SizedBox(
+                    height: 200.0,
+                  ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      SizedBox(width: 7),
+                      Text(
+                        'Made With',
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            wordSpacing: 2.0,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      SizedBox(width: 7),
+                      Icon(Icons.favorite, color: Colors.redAccent),
+                      SizedBox(width: 7),
+                      Text(
+                        'Flutter',
+                        style: TextStyle(
+                            fontSize: 20.0,
+                            wordSpacing: 2.0,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       );
     } else {
