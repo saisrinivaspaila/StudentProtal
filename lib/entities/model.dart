@@ -6,6 +6,7 @@ import 'package:scoped_model/scoped_model.dart';
 class Student extends Model {
   String _regId = "";
   String _pass = "";
+  String _mailId = "";
   Map<String, dynamic> responseData = {};
   String _name = '';
   String _mobileNumber = '';
@@ -74,6 +75,10 @@ class Student extends Model {
     return _loginStatus;
   }
 
+  String get mailId {
+    return _mailId;
+  }
+
   Future<bool> fetchRegNo(String regId) {
     _regId = regId;
     _isLoading = true;
@@ -105,6 +110,7 @@ class Student extends Model {
       _classesAttended = responseData["Attendance"]["Classes attended"];
       _classesConducted = responseData["Attendance"]["Classes conducted"];
       _attendance = responseData["Attendance"]["Attendance Percentage"];
+      _mailId = responseData["mailId"];
       _loginStatus = true;
       _isLoading = false;
       notifyListeners();

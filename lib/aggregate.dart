@@ -205,7 +205,7 @@ class _SemesterDataState extends State<SemesterData> {
                   child: ListBody(
                     children: [
                       Text(
-                        '${subjAndGrade[index][0]} - ${subjAndGrade[index][1]}',
+                        '${subjAndGrade[index][0]} : ${subjAndGrade[index][1]}',
                         textAlign: TextAlign.left,
                         textDirection: TextDirection.ltr,
                         style: style.copyWith(

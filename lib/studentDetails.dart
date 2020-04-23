@@ -72,6 +72,13 @@ class _StudentDetailsState extends State<StudentDetails> {
                     textAlign: TextAlign.left,
                     style: style.copyWith(
                         color: Colors.black, fontWeight: FontWeight.bold)),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text("Email: ${widget.model.mailId} ",
+                    textAlign: TextAlign.left,
+                    style: style.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.bold)),
               ],
             ),
           ),
