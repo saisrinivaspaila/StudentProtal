@@ -10,6 +10,7 @@ class Student extends Model {
   String _name = '';
   String _mobileNumber = '';
   int _classesAttended, _classesConducted;
+  double _attendance;
   bool _loginStatus = false;
   bool _isLoading = false;
   int _year, _section, _semData;
@@ -31,8 +32,7 @@ class Student extends Model {
   }
 
   double get attendace {
-    return double.parse(
-        ((_classesAttended / _classesConducted) * 100).toStringAsFixed(2));
+    return _attendance;
   }
 
   String get mobileNumber {
@@ -71,14 +71,14 @@ class Student extends Model {
       notifyListeners();
       responseData = json.decode(response.body);
       _pass = responseData["Password"];
-
       _name = responseData["Name"];
       _mobileNumber = responseData["Mobile Number"];
       _year = responseData["Year"];
       _section = responseData["Sec"];
       _semData = responseData["Semesters"];
-      _classesAttended = responseData["Class attended"];
-      _classesConducted = responseData["Classes conducted"];
+      _classesAttended = responseData["Attendance"]["Classes attended"];
+      _classesConducted = responseData["Attendance"]["Classes conducted"];
+      _attendance = responseData["Attendance"]["Attendance Percentage"];
       _loginStatus = true;
       _isLoading = false;
       notifyListeners();
