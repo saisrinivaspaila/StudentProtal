@@ -1,10 +1,9 @@
 import 'package:minipro/entities/model.dart';
 import 'package:flutter/material.dart';
 
-List semesters = [];
 List backlogInfo = [];
 List gradePerSem = [];
-List<dynamic> semestergpa = [];
+List semestergpa = [];
 TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
 class AggregateDetails extends StatefulWidget {
@@ -18,10 +17,10 @@ class AggregateDetails extends StatefulWidget {
 class _AggregateDetailsState extends State<AggregateDetails> {
   Widget build(BuildContext context) {
     setsemestergpa();
-    print(widget.model.backlogInfo);
-    print(widget.model.cgpaInfo);
-    print(widget.model.gradesInEachSem);
-    print(semestergpa.length);
+    // print(widget.model.backlogInfo);
+    // print(widget.model.cgpaInfo);
+    // print(widget.model.gradesInEachSem);
+    // print(semestergpa.length);
     return Scaffold(
       backgroundColor: Color(0xfff5f7ff),
       body: Container(
@@ -40,7 +39,7 @@ class _AggregateDetailsState extends State<AggregateDetails> {
                     borderRadius: BorderRadius.circular(30.0)),
                 child: Container(
                   child: Text(
-                    '${semesters[index]}: ${semestergpa[index]}',
+                    '${semestergpa[index][0]} : ${semestergpa[index][1]}',
                     textAlign: TextAlign.left,
                     textDirection: TextDirection.ltr,
                     style: style.copyWith(
@@ -70,30 +69,24 @@ class _AggregateDetailsState extends State<AggregateDetails> {
       backlogInfo.add(value);
       count += value;
     });
-    // print(backlogInfo);
 
     widget.model.gradesInEachSem.forEach((key, value) {
       gradePerSem.add(value);
     });
 
     widget.model.cgpaInfo.forEach((key, value) {
-      semesters.add("Semester " + key);
-      semestergpa.add(value);
+      semestergpa.add(["Semester " + key, value]);
       val += value;
     });
-    print(semestergpa);
-    semesters.add("Backlog Count");
-    semestergpa.add(count);
-    print(semestergpa);
-    semesters.add("Total GPA");
+    semestergpa.add(["Backlog Count", count]);
     if (count == 0) {
-      semestergpa.add(double.parse(
-          ((val / widget.model.cgpaInfo.length)).toStringAsFixed(2)));
+      semestergpa.add([
+        "Total GPA",
+        double.parse(((val / widget.model.cgpaInfo.length)).toStringAsFixed(2))
+      ]);
     } else {
-      semestergpa.add(0);
+      semestergpa.add(["Total GPA", 0]);
     }
-
-    print(semestergpa);
   }
 }
 
