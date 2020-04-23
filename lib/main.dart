@@ -6,6 +6,7 @@ import 'package:minipro/changepasswd.dart';
 import 'package:minipro/menuPage.dart';
 import 'package:minipro/predictAttendance.dart';
 // import 'package:minipro/menuPage.dart';
+import 'aggregate.dart';
 import 'loginPage.dart';
 import 'studentDetails.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -97,6 +98,7 @@ class _MyAppState extends State<MyApp> {
           '/studentDetails': (BuildContext context) => StudentDetails(_model),
           '/viewAttendance': (BuildContext context) =>
               AttendanceDetails(_model),
+          '/aggregate': (BuildContext context) => AggregateDetails(_model),
           '/predictAttendance': (BuildContext context) =>
               PredictAttendance(_model),
           '/menuPage': (BuildContext context) => MenuPage(_model),

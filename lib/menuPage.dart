@@ -86,7 +86,9 @@ class _MenuPageState extends State<MenuPage> {
                   color: Color(0xff3949ab),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30.0)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/aggregate');
+                  },
                   child: Text("${menu[2]}",
                       textAlign: TextAlign.center,
                       style: style.copyWith(
