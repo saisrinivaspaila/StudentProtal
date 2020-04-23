@@ -31,17 +31,17 @@ class _MenuPageState extends State<MenuPage> {
             child: ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 120.0,
+                  height: 90.0,
                 ),
                 SizedBox(
-                  height: 150.0,
+                  height: 100.0,
                   child: Image.asset(
                     "images/Vignan_logo.png",
                     fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(
-                  height: 100.0,
+                  height: 50.0,
                 ),
                 RaisedButton(
                   color: Color(0xff3949ab),
@@ -148,6 +148,9 @@ class _MenuPageState extends State<MenuPage> {
                       textAlign: TextAlign.center,
                       style: style.copyWith(
                           color: Colors.white, fontWeight: FontWeight.bold)),
+                ),
+                SizedBox(
+                  height: 70.0,
                 ),
               ],
             ),

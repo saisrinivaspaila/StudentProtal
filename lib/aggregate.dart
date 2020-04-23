@@ -209,7 +209,9 @@ class _SemesterDataState extends State<SemesterData> {
                         textAlign: TextAlign.left,
                         textDirection: TextDirection.ltr,
                         style: style.copyWith(
-                            color: Colors.white, fontWeight: FontWeight.bold),
+                            fontSize: 15,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),

@@ -36,7 +36,7 @@ class _PassPageState extends State<PassPage> {
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    height: 100.0,
+                    height: 90.0,
                   ), //add media query for this on
 
                   SizedBox(
@@ -49,10 +49,12 @@ class _PassPageState extends State<PassPage> {
 
                   SizedBox(height: 45.0),
 
-                  Text("Welcome " + widget.model.name,
-                      textAlign: TextAlign.left,
-                      style: style.copyWith(
-                          color: Colors.black, fontWeight: FontWeight.bold),),
+                  Text(
+                    "Welcome\n" + widget.model.name,
+                    textAlign: TextAlign.center,
+                    style: style.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
 
                   SizedBox(height: 20.0),
 
