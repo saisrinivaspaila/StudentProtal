@@ -58,6 +58,18 @@ class Student extends Model {
     return _section;
   }
 
+  Map get backlogInfo {
+    return _backlogInEachSem;
+  }
+
+  Map get cgpaInfo {
+    return _cgpa;
+  }
+
+  Map get gradesInEachSem {
+    return _gradesInEachSem;
+  }
+
   bool get loginStatus {
     return _loginStatus;
   }
