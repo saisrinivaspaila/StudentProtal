@@ -52,7 +52,7 @@ class _PassPageState extends State<PassPage> {
                   Text("Welcome " + widget.model.name,
                       textAlign: TextAlign.left,
                       style: style.copyWith(
-                          color: Colors.black, fontWeight: FontWeight.bold)),
+                          color: Colors.black, fontWeight: FontWeight.bold),),
 
                   SizedBox(height: 20.0),
 

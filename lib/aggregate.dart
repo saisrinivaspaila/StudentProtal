@@ -34,6 +34,14 @@ class _AggregateDetailsState extends State<AggregateDetails> {
           SizedBox(
             height: 90.0,
           ),
+          Text(
+            'Semesters Agregate',
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.black, fontWeight: FontWeight.bold),
+          ),
+
+          SizedBox(height: 20.0),
           ListView.builder(
             shrinkWrap: true,
             itemCount: semestergpa.length,
@@ -69,6 +77,32 @@ class _AggregateDetailsState extends State<AggregateDetails> {
               );
             },
           ),
+          SizedBox(
+            height: 10.0,
+          ),
+          SizedBox(
+            height: 50.0,
+          ),
+          ButtonTheme(
+            child: Center(
+              child: Ink(
+                decoration: const ShapeDecoration(
+                  color: Color(0xff3949ab),
+                  shape: CircleBorder(),
+                ),
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  color: Color(0xfff5f7ff),
+                  onPressed: () {
+                    Navigator.pop(context);
+                    backlogInfo.clear();
+                    gradePerSem.clear();
+                    semestergpa.clear();
+                  },
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
