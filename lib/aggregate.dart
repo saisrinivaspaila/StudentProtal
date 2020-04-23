@@ -19,41 +19,57 @@ class _AggregateDetailsState extends State<AggregateDetails> {
     setsemestergpa();
     return Scaffold(
       backgroundColor: Color(0xfff5f7ff),
-      body: Container(
-        child: ListView.builder(
-          itemCount: semestergpa.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding:
-                  const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10),
-              child: RaisedButton(
-                color: Color(0xff3949ab),
-                hoverElevation: 3.0,
-                elevation: 1.0,
-                // padding: EdgeInsets.all(10.0),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0)),
-                child: Container(
-                  child: Text(
-                    '${semestergpa[index][0]} : ${semestergpa[index][1]}',
-                    textAlign: TextAlign.left,
-                    textDirection: TextDirection.ltr,
-                    style: style.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SemesterData(index),
+      body: ListView(
+        children: <Widget>[
+          SizedBox(
+            height: 100.0,
+          ), //add media query for this on
+          SizedBox(
+            height: 100.0,
+            child: Image.asset(
+              "images/Vignan_logo.png",
+              fit: BoxFit.contain,
+            ),
+          ),
+          SizedBox(
+            height: 90.0,
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            itemCount: semestergpa.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding:
+                    const EdgeInsets.only(left: 20.0, right: 20.0, bottom: 10),
+                child: RaisedButton(
+                  color: Color(0xff3949ab),
+                  hoverElevation: 3.0,
+                  elevation: 1.0,
+                  // padding: EdgeInsets.all(10.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0)),
+                  child: Container(
+                    child: Text(
+                      '${semestergpa[index][0]} : ${semestergpa[index][1]}',
+                      textAlign: TextAlign.left,
+                      textDirection: TextDirection.ltr,
+                      style: style.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                  );
-                },
-              ),
-            );
-          },
-        ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SemesterData(index),
+                      ),
+                    );
+                  },
+                ),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
