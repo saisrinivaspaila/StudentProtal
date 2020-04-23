@@ -17,10 +17,6 @@ class AggregateDetails extends StatefulWidget {
 class _AggregateDetailsState extends State<AggregateDetails> {
   Widget build(BuildContext context) {
     setsemestergpa();
-    // print(widget.model.backlogInfo);
-    // print(widget.model.cgpaInfo);
-    // print(widget.model.gradesInEachSem);
-    // print(semestergpa.length);
     return Scaffold(
       backgroundColor: Color(0xfff5f7ff),
       body: Container(
@@ -108,7 +104,7 @@ class _SemesterDataState extends State<SemesterData> {
     // semWiseGradeExtract();
     semGrade = gradePerSem[index];
     semGrade["Backlogs"] = backlogInfo[index];
-    semGrade["Semester CGPA"] = semestergpa[index];
+    semGrade["Semester CGPA"] = semestergpa[index][1];
     semGrade.forEach((key, value) {
       subjAndGrade.add([key, value]);
     });
