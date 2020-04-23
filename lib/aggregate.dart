@@ -70,12 +70,12 @@ class _AggregateDetailsState extends State<AggregateDetails> {
       backlogInfo.add(value);
       count += value;
     });
-    print(backlogInfo);
+    // print(backlogInfo);
 
     widget.model.gradesInEachSem.forEach((key, value) {
       gradePerSem.add(value);
     });
-    print(gradePerSem);
+
     widget.model.cgpaInfo.forEach((key, value) {
       semesters.add("Semester " + key);
       semestergpa.add(value);
@@ -108,22 +108,31 @@ class SemesterData extends StatefulWidget {
 class _SemesterDataState extends State<SemesterData> {
   final int index;
   _SemesterDataState(this.index);
-
+  Map semGrade = {};
+  List subjAndGrade = [];
   @override
   Widget build(BuildContext context) {
+    // semWiseGradeExtract();
+    semGrade = gradePerSem[index];
+    semGrade["Backlogs"] = backlogInfo[index];
+    semGrade["Semester CGPA"] = semestergpa[index];
+    semGrade.forEach((key, value) {
+      subjAndGrade.add([key, value]);
+    });
+
     return Scaffold(
       body: Container(
         child: ListView.builder(
-          itemCount: semestergpa.length,
+          itemCount: subjAndGrade.length,
           itemBuilder: (context, index) {
             return ListBody(
-              children: [Text('Hi')],
+              children: [
+                Text('${subjAndGrade[index][0]} - ${subjAndGrade[index][1]}')
+              ],
             );
           },
         ),
       ),
     );
   }
-
-  void setsemestergpa() {}
 }
