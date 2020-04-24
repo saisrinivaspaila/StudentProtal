@@ -23,7 +23,7 @@ class _PredictAttendanceState extends State<PredictAttendance> {
       body: Center(
         child: Card(
           color: Color(0xfff5f7ff),
-          child: Column(
+          child: ListView(
             children: <Widget>[
               SizedBox(
                 height: 100.0,
@@ -112,7 +112,10 @@ class _PredictAttendanceState extends State<PredictAttendance> {
                     ),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 40.0,
+              ),
             ],
           ),
         ),

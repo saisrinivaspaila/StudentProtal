@@ -150,7 +150,7 @@ class _MenuPageState extends State<MenuPage> {
                           color: Colors.white, fontWeight: FontWeight.bold)),
                 ),
                 SizedBox(
-                  height: 70.0,
+                  height: 40.0,
                 ),
               ],
             ),

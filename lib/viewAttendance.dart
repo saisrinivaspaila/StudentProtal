@@ -79,7 +79,10 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
                 ),
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: 40.0,
+          ),
         ],
       ),
     );

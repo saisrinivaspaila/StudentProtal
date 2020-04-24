@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="minipro"
+        android:label="Student's Portal"
         android:icon="@mipmap/viit">
         <activity
             android:name=".MainActivity"

@@ -108,7 +108,11 @@ class _StudentDetailsState extends State<StudentDetails> {
                 ),
               ),
             ),
-          )
+          ),
+
+          SizedBox(
+            height: 40.0,
+          ),
         ],
       ),
     );
