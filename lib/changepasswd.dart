@@ -133,6 +133,9 @@ class _ChangePassState extends State<ChangePass> {
                 ),
               ),
             ),
+          ),
+          SizedBox(
+            height: 40.0,
           )
         ],
       ),
