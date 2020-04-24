@@ -112,6 +112,9 @@ class _AggregateDetailsState extends State<AggregateDetails> {
   }
 
   void setsemestergpa() {
+    backlogInfo = [];
+    gradePerSem = [];
+    semestergpa = [];
     int count = 0;
     double val = 0;
     widget.model.backlogInfo.forEach((key, value) {
