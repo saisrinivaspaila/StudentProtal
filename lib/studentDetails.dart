@@ -70,10 +70,13 @@ class _StudentDetailsState extends State<StudentDetails> {
                   SizedBox(
                     height: 10.0,
                   ),
-                  Text("Attendance: ${widget.model.attendace} %",
-                      textAlign: TextAlign.left,
-                      style: style.copyWith(
-                          color: Colors.black, fontWeight: FontWeight.bold)),
+                  (widget.model.attendance != null)
+                      ? Text("Attendance: ${widget.model.attendance} %",
+                          textAlign: TextAlign.left,
+                          style: style.copyWith(
+                              color: Colors.black, fontWeight: FontWeight.bold))
+                      : Text(""),
+
                   // SizedBox(
                   //   height: 10.0,
                   // ),
@@ -87,10 +90,7 @@ class _StudentDetailsState extends State<StudentDetails> {
           ),
 
           SizedBox(
-            height: 10.0,
-          ),
-          SizedBox(
-            height: 50.0,
+            height: 20.0,
           ),
           ButtonTheme(
             child: Center(

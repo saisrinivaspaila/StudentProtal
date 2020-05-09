@@ -16,6 +16,63 @@ class AggregateDetails extends StatefulWidget {
 
 class _AggregateDetailsState extends State<AggregateDetails> {
   Widget build(BuildContext context) {
+    if (widget.model.gradesInEachSem.length == 0) {
+      return Scaffold(
+          backgroundColor: Color(0xfff5f7ff),
+          body: ListView(children: <Widget>[
+            SizedBox(
+              height: 100.0,
+            ), //add media query for this on
+            SizedBox(
+              height: 100.0,
+              child: Image.asset(
+                "images/Vignan_logo.png",
+                fit: BoxFit.contain,
+              ),
+            ),
+            SizedBox(
+              height: 90.0,
+            ),
+            Text(
+              'Semesters Agregate',
+              textAlign: TextAlign.center,
+              style: style.copyWith(
+                  color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Text(
+              'Semesters info is not updated',
+              textAlign: TextAlign.center,
+              style: style.copyWith(
+                  color: Colors.black, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            ButtonTheme(
+              child: Center(
+                child: Ink(
+                  decoration: const ShapeDecoration(
+                    color: Color(0xff3949ab),
+                    shape: CircleBorder(),
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    color: Color(0xfff5f7ff),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      backlogInfo.clear();
+                      gradePerSem.clear();
+                      semestergpa.clear();
+                    },
+                  ),
+                ),
+              ),
+            )
+          ]));
+    }
     setsemestergpa();
     return Scaffold(
       backgroundColor: Color(0xfff5f7ff),
@@ -81,10 +138,7 @@ class _AggregateDetailsState extends State<AggregateDetails> {
             },
           ),
           SizedBox(
-            height: 10.0,
-          ),
-          SizedBox(
-            height: 50.0,
+            height: 20.0,
           ),
           ButtonTheme(
             child: Center(

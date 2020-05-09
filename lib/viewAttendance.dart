@@ -30,38 +30,49 @@ class _AttendanceDetailsState extends State<AttendanceDetails> {
           SizedBox(
             height: 90.0,
           ),
-          Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text("Attendance: ${widget.model.attendace} %",
-                    textAlign: TextAlign.left,
-                    style: style.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
-                SizedBox(
-                  height: 10.0,
+          (widget.model.attendance == null)
+              ? Text(
+                  'Attendance info is not updated',
+                  textAlign: TextAlign.center,
+                  style: style.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                )
+              : Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Text("Attendance: ${widget.model.attendance} %",
+                          textAlign: TextAlign.left,
+                          style: style.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text("Classes Attended: ${widget.model.classesAttended}",
+                          textAlign: TextAlign.left,
+                          style: style.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(
+                          "Classes Conducted: ${widget.model.classesConducted}",
+                          textAlign: TextAlign.left,
+                          style: style.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold)),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                    ],
+                  ),
                 ),
-                Text("Classes Attended: ${widget.model.classesAttended}",
-                    textAlign: TextAlign.left,
-                    style: style.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text("Classes Conducted: ${widget.model.classesConducted}",
-                    textAlign: TextAlign.left,
-                    style: style.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
-                SizedBox(
-                  height: 10.0,
-                ),
-              ],
-            ),
-          ),
 
           SizedBox(
-            height: 100.0,
+            height: 20.0,
           ),
           ButtonTheme(
             child: Center(

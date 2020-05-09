@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minipro/entities/model.dart';
 // import 'package:slide_button/slide_button.dart';
+import 'dart:convert';
 
 class ChangePass extends StatefulWidget {
   final Student model;
@@ -89,7 +90,16 @@ class _ChangePassState extends State<ChangePass> {
                 borderRadius: BorderRadius.circular(30.0)),
             onPressed: () {
               setState(() {
-                if (oldpass.text == widget.model.pass) {
+                var pass = oldpass.text + "getLostToDecrypt";
+                var bytes = utf8.encode(pass);
+                pass = base64.encode(bytes);
+                pass = pass.substring(0, pass.length - 2);
+                pass = pass.substring(0, 6) +
+                    '${widget.model.mobileNumber[5]}${widget.model.mobileNumber[1]}' +
+                    'gO19' +
+                    '${widget.model.mobileNumber[9]}Da&d_${widget.model.mobileNumber[2]}=1' +
+                    pass.substring(6, pass.length);
+                if (pass == widget.model.pass) {
                   if (newpass.text == cnewpass.text) {
                     if ((newpass.text).length > 8) {
                       widget.model.setPass(newpass.text);
@@ -115,7 +125,7 @@ class _ChangePassState extends State<ChangePass> {
           ),
           Center(child: output1(check)),
           SizedBox(
-            height: 50.0,
+            height: 20.0,
           ),
           ButtonTheme(
             child: Center(
