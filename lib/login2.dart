@@ -23,7 +23,8 @@ class _PassPageState extends State<PassPage> {
   @override
   Widget build(BuildContext context) {
     TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-
+    // print(widget.model.loginStatus);
+    // print("Hello");
     if (widget.model.loginStatus == true) {
       return Scaffold(
         resizeToAvoidBottomPadding: false,

@@ -82,7 +82,7 @@ class Student extends Model {
 
   Future<bool> fetchRegNo(String regId) {
     _regId = regId;
-    print(_regId);
+    // print(_regId);
     _isLoading = true;
     notifyListeners();
     return http
@@ -152,8 +152,8 @@ class Student extends Model {
           'gO19' +
           '${mobileNumber[9]}Da&d_${mobileNumber[2]}=1' +
           pass.substring(6, pass.length);
-      print(pass);
-      print(_pass);
+      // print(pass);
+      // print(_pass);
       if (pass == _pass) {
         _loginStatus = true;
       } else {
@@ -170,14 +170,14 @@ class Student extends Model {
 
     var bytes = utf8.encode(pass);
     pass = base64.encode(bytes);
-    print(pass);
+    // print(pass);
     pass = pass.substring(0, pass.length - 2);
     pass = pass.substring(0, 6) +
         '${mobileNumber[5]}${mobileNumber[1]}' +
         'gO19' +
         '${mobileNumber[9]}Da&d_${mobileNumber[2]}=1' +
         pass.substring(6, pass.length);
-    print(pass);
+    // print(pass);
     return http
         .put(
             'https://minipro2-9bc1f.firebaseio.com/regno/$_regId/Password.json',
