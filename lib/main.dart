@@ -11,7 +11,6 @@ import 'loginPage.dart';
 import 'studentDetails.dart';
 import 'package:scoped_model/scoped_model.dart';
 import './entities/model.dart';
-// import './menuPage.dart';
 import "./viewAttendance.dart";
 
 void main() {
@@ -123,7 +122,6 @@ class AppHome extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xfff5f7ff),
       body: LoginPage(model),
-      //  bro this is your login page----> LoginPage(),
     );
   }
 }

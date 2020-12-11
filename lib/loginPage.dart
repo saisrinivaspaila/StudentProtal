@@ -54,6 +54,9 @@ class _LoginPageState extends State<LoginPage> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
+          if (username.text == "") {
+            username.text = "nothing";
+          }
           if (await (widget.model.fetchRegNo(username.text)) == true) {
             // print(username.text);
             // print(widget.model.loginStatus);

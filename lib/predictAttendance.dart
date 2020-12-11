@@ -96,7 +96,7 @@ class _PredictAttendanceState extends State<PredictAttendance> {
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Text("No of leaves you are expected to keep",
+                child: Text("No. of leaves you are expected to keep",
                     textAlign: TextAlign.center,
                     style: style.copyWith(
                         color: Colors.black, fontWeight: FontWeight.bold)),
@@ -181,7 +181,7 @@ class _PredictAttendanceState extends State<PredictAttendance> {
 
   Widget predictAtt(double _predicted) {
     if (_predicted != null) {
-      return Text("Perdicted Attendance = $_predicted",
+      return Text("Predicted Attendance = $_predicted",
           textAlign: TextAlign.center,
           style:
               style.copyWith(color: Colors.black, fontWeight: FontWeight.bold));

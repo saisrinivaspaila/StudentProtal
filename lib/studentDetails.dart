@@ -42,7 +42,7 @@ class _StudentDetailsState extends State<StudentDetails> {
                   SizedBox(
                     height: 10.0,
                   ),
-                  Text("Regestration Number: " + widget.model.regId,
+                  Text("Registration Number: " + widget.model.regId,
                       textAlign: TextAlign.left,
                       style: style.copyWith(
                           color: Colors.black, fontWeight: FontWeight.bold)),

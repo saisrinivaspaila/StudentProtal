@@ -14,7 +14,7 @@ class _MenuPageState extends State<MenuPage> {
     "Your Details",
     "Check Attendance",
     "Check Aggregate",
-    "Predict Attendace",
+    "Predict Attendance",
     "Change Password"
   ];
   _MenuPageState();

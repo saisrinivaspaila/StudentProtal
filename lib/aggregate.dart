@@ -34,7 +34,7 @@ class _AggregateDetailsState extends State<AggregateDetails> {
               height: 90.0,
             ),
             Text(
-              'Semesters Agregate',
+              'Semesters Aggregate',
               textAlign: TextAlign.center,
               style: style.copyWith(
                   color: Colors.black, fontWeight: FontWeight.bold),
@@ -92,7 +92,7 @@ class _AggregateDetailsState extends State<AggregateDetails> {
             height: 90.0,
           ),
           Text(
-            'Semesters Agregate',
+            'Semesters Aggregate',
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.black, fontWeight: FontWeight.bold),
